@@ -19,31 +19,6 @@
           <el-button @click="addDialogVisible = true" type="primary">添加用户</el-button>
         </el-col>
       </el-row>
-      <!--添加用户对话框-->
-      <el-dialog
-        @close="addDialogClosed"
-        title="添加用户"
-        :visible.sync="addDialogVisible"
-        width="50%">
-        <el-form :model="addForm" :rules="addFormRules" ref="addFormRef" label-width="70px">
-          <el-form-item label="用户名" prop="username">
-            <el-input v-model="addForm.username"></el-input>
-          </el-form-item>
-          <el-form-item label="密码" prop="password">
-            <el-input v-model="addForm.password"></el-input>
-          </el-form-item>
-          <el-form-item label="邮箱" prop="email">
-            <el-input v-model="addForm.email"></el-input>
-          </el-form-item>
-          <el-form-item label="手机" prop="mobile">
-            <el-input v-model="addForm.mobile"></el-input>
-          </el-form-item>
-        </el-form>
-        <span slot="footer" class="dialog-footer">
-          <el-button @click="addDialogVisible = false">取 消</el-button>
-          <el-button type="primary" @click="addUser">确 定</el-button>
-        </span>
-      </el-dialog>
       <!--用户信息展示区域-->
       <el-table
         :data="userList"
@@ -80,6 +55,31 @@
         layout="total, sizes, prev, pager, next, jumper"
         :total="total">
       </el-pagination>
+      <!--添加用户对话框-->
+      <el-dialog
+        @close="addDialogClosed"
+        title="添加用户"
+        :visible.sync="addDialogVisible"
+        width="50%">
+        <el-form :model="addForm" :rules="addFormRules" ref="addFormRef" label-width="70px">
+          <el-form-item label="用户名" prop="username">
+            <el-input v-model="addForm.username"></el-input>
+          </el-form-item>
+          <el-form-item label="密码" prop="password">
+            <el-input v-model="addForm.password"></el-input>
+          </el-form-item>
+          <el-form-item label="邮箱" prop="email">
+            <el-input v-model="addForm.email"></el-input>
+          </el-form-item>
+          <el-form-item label="手机" prop="mobile">
+            <el-input v-model="addForm.mobile"></el-input>
+          </el-form-item>
+        </el-form>
+        <span slot="footer" class="dialog-footer">
+          <el-button @click="addDialogVisible = false">取 消</el-button>
+          <el-button type="primary" @click="addUser">确 定</el-button>
+        </span>
+      </el-dialog>
       <!--修改用户对话框-->
       <el-dialog
         @close="editDialogClosed"
