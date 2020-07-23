@@ -152,7 +152,7 @@ export default {
   methods: {
     getCategoryList () {
       this.$http.get('categories', { params: this.queryInfo }).then(res => {
-        console.log(res)
+        // console.log(res)
         if (res.data.meta.status !== 200) return this.$message.error(res.data.meta.msg)
         this.categoryList = res.data.data.result
         this.total = res.data.data.total
@@ -174,7 +174,7 @@ export default {
     },
     getParentCateList () {
       this.$http.get('categories', { params: { type: 2 } }).then(res => {
-        console.log(res.data)
+        // console.log(res.data)
         if (res.data.meta.status !== 200) return this.$message.error(res.data.meta.msg)
         this.parentCateList = res.data.data
       })
