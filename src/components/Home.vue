@@ -71,7 +71,7 @@ export default {
     },
     getMenuList () {
       this.$http.get('menus').then(res => {
-        console.log(res.data)
+        // console.log(res.data)
         if (res.data.meta.status !== 200) return this.$message.error(res.data.meta.msg)
         this.menuList = res.data.data
       })
