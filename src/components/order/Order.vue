@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="order">
     <!--面包屑导航区域-->
     <el-breadcrumb separator-class="el-icon-arrow-right">
       <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
@@ -16,7 +16,7 @@
         </el-col>
       </el-row>
       <!--表格区域-->
-      <el-table :data="orderList" :border="true" :stripe="true">
+      <el-table :data="orderList" :border="true" :stripe="true" height="90%">
         <el-table-column type="index" label="#"></el-table-column>
         <el-table-column label="订单编号" prop="order_number"></el-table-column>
         <el-table-column width="100px" label="订单价格(元)" prop="order_price"></el-table-column>
@@ -158,8 +158,17 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
   .el-cascader {
     width: 100%;
+  }
+  .order {
+    height: 95%;
+    .el-card {
+      height: 100%;
+    }
+    .el-card__body {
+      height: 90%;
+    }
   }
 </style>

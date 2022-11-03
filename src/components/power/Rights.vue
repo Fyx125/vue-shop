@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="rights">
     <!--面包屑导航区域-->
     <el-breadcrumb separator-class="el-icon-arrow-right">
       <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
@@ -8,7 +8,7 @@
     </el-breadcrumb>
     <!--卡片视图区域-->
     <el-card>
-      <el-table :data="rightsList" :border="true" :stripe="true">
+      <el-table :data="rightsList" :border="true" :stripe="true" height="90%">
         <el-table-column type="index" label="#"></el-table-column>
         <el-table-column prop="authName" label="权限名称"></el-table-column>
         <el-table-column prop="path" label="路径"></el-table-column>
@@ -47,6 +47,14 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
-
+<style lang="less">
+.rights {
+  height: 100%;
+  .el-card {
+    height: 90%;
+    .el-card__body {
+      height: 100%;
+    }
+  }
+}
 </style>
